@@ -1,14 +1,12 @@
-from django.contrib import admin
 from django.urls import path, include
-from .views import PostsListView
+from .views import PostsListView, PostsDetailView, PostsCreateView, PostsDeleteView
 
 
 app_name = 'community'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', PostsListView.as_view(), name='list'),
-    # path('diary/detail/<int:pk>', DiaryDetailView.as_view(), name='detail'),
-    # path('diary/create/', DiaryCreateView.as_view(), name='create'),
-    # path('diary/delete/<int:pk>', DiaryDeleteView.as_view(), name='delete'),
+    path('detail/<int:pk>', PostsDetailView.as_view(), name='detail'),
+    path('create', PostsCreateView.as_view(), name='create'),
+    path('delete/<int:pk>', PostsDeleteView.as_view(), name='delete'),
 ]

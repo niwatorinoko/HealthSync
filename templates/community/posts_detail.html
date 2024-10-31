@@ -20,7 +20,9 @@
         {{ object.event_name }}<br />
       </div>
       {% if request.user == object.author %}
-      <a class="button is-danger" href="">削除</a>
+      <a class="button is-danger" href="{% url 'community:delete' post.id %}"
+        >削除</a
+      >
       {% endif %}
     </div>
   </div>
