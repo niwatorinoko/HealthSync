@@ -1,6 +1,5 @@
-{% load static %} {% block content %}
+{% extends 'base.html' %}{% load static %} {% block content %}
 
-<h1>All Posts</h1>
 <div class="columns is-centered">
   <div class="column is-half">
     {% for item in object_list %}
@@ -16,16 +15,14 @@
         </div>
         <div class="media-content">
           <div class="content">
-            <a href="">
+            <a href="{% url 'community:detail' item.pk %}">
               <strong class="has-text-black is-size-4">{{ item.title }}</strong>
             </a>
             <p class="is-size-5 mt-2">
               <span class="has-text-grey">by</span>
               <strong class="has-text-black">{{ item.author }}</strong>
             </p>
-            <p class="is-size-6 mt-2">
-              {{ item.created_at|date:"Y年m月d日 H:i" }}
-            </p>
+            <p class="is-size-6 mt-2">{{ item.created_at|date:"Y/m/d H:i" }}</p>
           </div>
         </div>
       </article>
