@@ -32,8 +32,9 @@ class Post(Common):
         verbose_name = 'Post'
         verbose_name_plural = 'Posts'
 
+    #保存した時に表示される文字列
     def __str__(self):
-        return self.body[:50]
+        return self.title
 
     def get_absolute_url(self):
         """
