@@ -41,12 +41,26 @@ class AuthenticationsSignupView(UnauthenticatedOnly, FormView):
         """
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
-            user_form.save()
+            user = user_form.save()
+
+            # 保存後に認証を実行してログイン
             user = authenticate(email=user_form.cleaned_data['email'], password=user_form.cleaned_data['password'])
-            login(request, user)
-            return redirect('authentications:index')
+            if user is not None:
+                login(request, user)
+                return redirect('authentications:index')
+            else:
+                print("Authentication failed")  # 認証失敗時
+                # 認証が失敗した場合はエラーメッセージを表示
+                return redirect('authentications:signup')
         else:
+            print("Form is not valid:", user_form.errors)  # 検証エラーの詳細を表示
             return render(request, self.template_name, {'form': user_form})
+        #     user_form.save()
+        #     user = authenticate(email=user_form.cleaned_data['email'], password=user_form.cleaned_data['password'])
+        #     login(request, user)
+        #     return redirect('authentications:index')
+        # else:
+        #     return render(request, self.template_name, {'form': user_form})
         
 class AuthenticationsLoginView(UnauthenticatedOnly ,FormView):
     """ 
