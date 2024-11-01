@@ -77,21 +77,21 @@ class AuthenticationsLogoutView(View):
         logout(request)
         return redirect('authentications:login')
 
-# class UserProfileView(DetailView):
-#     """
-#     特定のユーザーの投稿一覧を取得しHTMLを返す
-#     """
-#     model = User
-#     template_name = 'authentications/user_profile.html'
+class UserProfileView(DetailView):
+    """
+    特定のユーザーの投稿一覧を取得しHTMLを返す
+    """
+    model = User
+    template_name = 'authentications/user_profile.html'
 
-#     def get(self, request, pk):
-#         """ 
-#         ユーザーとそのユーザーの全ての投稿を返す
-#         """
-#         user = User.objects.get(id=pk)
-#         user_diarys = user.diary_set.all()
-#         context = {
-#             'user': user,
-#             'diarys': user_diarys
-#         }
-#         return render(request, self.template_name, context)
+    def get(self, request, pk):
+        """ 
+        ユーザーとそのユーザーの全ての投稿を返す
+        """
+        user = User.objects.get(id=pk)
+        user_posts = user.post_set.all()
+        context = {
+            'user': user,
+            'posts': user_posts
+        }
+        return render(request, self.template_name, context)

@@ -7,9 +7,9 @@ from django.contrib.auth.models import (
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
         if not email:
-            raise ValueError('メールアドレスは必須です')
+            raise ValueError('Email address is required')
         if not username:
-            raise ValueError('ユーザーネームは必須です')
+            raise ValueError('Username is required')
         
         email = self.normalize_email(email) # ドメイン部分を小文字にして、メールアドレスを正規化
         user = self.model(
@@ -31,9 +31,9 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         max_length=250, unique=True,
-        verbose_name='メールアドレス'
+        verbose_name='email address'
     )
-    username = models.CharField(max_length=100, verbose_name='ユーザーネーム')
+    username = models.CharField(max_length=100, verbose_name='username')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -43,8 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['username'] 
     
     class Meta:
-        verbose_name = 'ユーザー'
-        verbose_name_plural = 'ユーザー'
+        verbose_name = 'user'
+        verbose_name_plural = 'users'
 
     def __str__(self):
         return self.username

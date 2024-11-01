@@ -18,16 +18,32 @@
               <a href="#features">Natrition Guide</a>
             </li>
             <li class="scroll-to-section">
-              <a href="#our-classes">Community</a>
+              <a href="{% url 'community:list' %}">Community</a>
+            </li>
+
+            {% if request.user.is_authenticated %}
+            <li class="scroll-to-section">
+              <a href="{% url 'authentications:profile' user.pk %}"
+                >Welcome, {{ request.user }}!</a
+              >
             </li>
             <li class="scroll-to-section">
-              <a href="#schedule">Profile</a>
+              <a
+                class="button is-warning"
+                href="{% url 'authentications:logout' %}"
+                >logout</a
+              >
             </li>
+            {% else %}
             <li class="scroll-to-section">
-              <a href="#contact-us">login</a>
+              <a href="{% url 'authentications:login' %}">login</a>
             </li>
-            <li class="main-button"><a href="#">Sign Up</a></li>
+            <li class="main-button">
+              <a href="{% url 'authentications:signup' %}">Sign Up</a>
+            </li>
+            {% endif %}
           </ul>
+
           <a class="menu-trigger">
             <span>Menu</span>
           </a>
