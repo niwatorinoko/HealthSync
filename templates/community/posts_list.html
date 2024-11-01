@@ -1,7 +1,18 @@
 {% extends 'base.html' %}{% load static %} {% block content %}
 
-<div class="columns is-centered">
+<div class="columns is-centered" style="padding-top: 80px">
   <div class="column is-half">
+    <!-- Create Post Button -->
+    <div class="has-text-right mb-4">
+      <a
+        href="{% url 'community:create' %}"
+        class="button is-primary is-medium"
+      >
+        <span class="icon"><i class="fas fa-plus"></i></span>
+        <span>Create Post</span>
+      </a>
+    </div>
+
     {% for item in object_list %}
     <div class="box">
       <article class="media">
