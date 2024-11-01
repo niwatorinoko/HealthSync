@@ -4,6 +4,7 @@ from django.views.generic import FormView, View, DetailView, TemplateView
 from django.contrib.auth import authenticate, login, logout,get_user_model
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .videos import VIDEO_LIBRARY
+from .nutrition_guide import personalized_nutrition_guide
 
 from .forms import UserCreationForm, UserLoginForm
 
@@ -144,5 +145,44 @@ class SportPlanView(LoginRequiredMixin, TemplateView):
             'advanced_title': advanced_title,
             'advanced_benefits': advanced_benefits,
             'advanced_url': advanced_url,
+        })
+        return context
+    
+
+class NutritionPlanView(LoginRequiredMixin, TemplateView):
+    template_name = 'authentications/nutrition_plan.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+
+        # ユーザー情報を取得
+        sport = user.preferred_sports
+        age_group = user.age_range
+        health_condition = "Yes" if user.health_condition.lower() == "yes" else "No"
+        food_allergies = "Yes" if user.food_allergies.lower() == "yes" else "No"
+        dietary_preference = user.dietary_preferences
+
+        # パーソナライズされた栄養ガイドを生成
+        nutrition_guide = personalized_nutrition_guide(
+            sport=sport,
+            age_group=age_group,
+            health_condition=health_condition,
+            food_allergies=food_allergies,
+            dietary_preference=dietary_preference
+        )
+
+        # Sample_Menuが辞書かどうかを確認
+        sample_menu_is_dict = isinstance(nutrition_guide.get("Sample Menu"), dict)
+
+        # コンテキストに栄養ガイド情報を追加
+        context.update({
+            'sport': sport,
+            'age_group': age_group,
+            'health_condition': health_condition,
+            'food_allergies': food_allergies,
+            'dietary_preference': dietary_preference,
+            'nutrition_guide': nutrition_guide,
+            'sample_menu_is_dict': sample_menu_is_dict,  # 追加
         })
         return context

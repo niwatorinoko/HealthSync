@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %}{% block content %}
 <section class="section" id="our-classes">
   <div class="container">
     <div class="row">
@@ -7,7 +7,9 @@
           <h2>Personalized <em>Sports Plan</em></h2>
           <img src="{% static 'images/line-dec.png' %}" alt="" />
           <p>
-            ユーザーが選んだスポーツ：{{ sport }} あなたのレベル：{{ level }}
+            Your-selected sports:{{ sport }}
+            <br />
+            Your level:{{ level }}
           </p>
         </div>
       </div>

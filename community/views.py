@@ -21,7 +21,7 @@ class AuthorOnly(LoginRequiredMixin, UserPassesTestMixin):
         return redirect('posts:detail', pk=self.kwargs['pk'])
     
 
-class PostsListView(ListView):
+class PostsListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'community/posts_list.html'
 
