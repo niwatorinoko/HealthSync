@@ -56,12 +56,7 @@ class AuthenticationsSignupView(UnauthenticatedOnly, FormView):
         else:
             print("Form is not valid:", user_form.errors)  # 検証エラーの詳細を表示
             return render(request, self.template_name, {'form': user_form})
-        #     user_form.save()
-        #     user = authenticate(email=user_form.cleaned_data['email'], password=user_form.cleaned_data['password'])
-        #     login(request, user)
-        #     return redirect('authentications:index')
-        # else:
-        #     return render(request, self.template_name, {'form': user_form})
+
         
 class AuthenticationsLoginView(UnauthenticatedOnly ,FormView):
     """ 

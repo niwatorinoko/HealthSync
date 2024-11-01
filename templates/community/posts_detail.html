@@ -7,7 +7,7 @@
     </div>
     <div class="content">
       <a href="">
-        <strong class="has-text-black">投稿者：{{ object.author }}</strong>
+        <strong class="has-text-black">Author:{{ object.author }}</strong>
       </a>
       <p class="is-size-5">
         <a href="">
@@ -20,14 +20,13 @@
       </div>
       {% if request.user == object.author %}
       <a class="button is-danger" href="{% url 'community:delete' post.id %}"
-        >削除</a
+        >delete</a
       >
       {% endif %}
     </div>
 
-    <!-- コメント表示 -->
     <div class="block">
-      <h2>コメント一覧</h2>
+      <h2>All comments</h2>
       {% for comment in comments %}
       <div class="box">
         <p>
@@ -37,7 +36,7 @@
         <p>{{ comment.body }}</p>
       </div>
       {% empty %}
-      <p>コメントがまだありません。</p>
+      <p>No comments</p>
       {% endfor %}
     </div>
 
@@ -46,13 +45,12 @@
     <form method="post" action="">
       {% csrf_token %} {{ form.body.label_tag }}<br />
       {{ form.body }}
-      <button type="submit" class="button is-primary">コメントを追加</button>
+      <button type="submit" class="button is-primary">Add a comment</button>
     </form>
     {% else %}
     <p>
-      コメントを投稿するには<a href="{% url 'authentication:login' %}"
-        >ログイン</a
-      >が必要です。
+      You need to
+      <a href="{% url 'authentication:login' %}">Login</a>
     </p>
     {% endif %}
   </div>

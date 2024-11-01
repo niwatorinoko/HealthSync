@@ -5,7 +5,7 @@
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %} {{ form.as_p }}
       <a class="button is-info mr-3" href="{{ request.META.HTTP_REFERER }}"
-        >戻る</a
+        >Back</a
       >
       <button class="button is-primary">Post</button>
     </form>
