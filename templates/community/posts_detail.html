@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="columns" style="padding-top: 80px">
   <div class="column is-one-quarter"></div>
@@ -16,8 +16,8 @@
         </a>
       </p>
       <div class="block">
+        {{ object.body }}<br />
         {{ object.created_at|date:"Y/m/d H:i" }}<br />
-        {{ object.event_name }}<br />
       </div>
       {% if request.user == object.author %}
       <a class="button is-danger" href="{% url 'community:delete' post.id %}"
@@ -25,6 +25,37 @@
       >
       {% endif %}
     </div>
+
+    <!-- コメント表示 -->
+    <div class="block">
+      <h2>コメント一覧</h2>
+      {% for comment in comments %}
+      <div class="box">
+        <p>
+          <strong>{{ comment.author }}</strong>
+          - {{ comment.created_at|date:"Y/m/d H:i" }}
+        </p>
+        <p>{{ comment.body }}</p>
+      </div>
+      {% empty %}
+      <p>コメントがまだありません。</p>
+      {% endfor %}
+    </div>
+
+    <!-- コメントフォーム -->
+    {% if user.is_authenticated %}
+    <form method="post" action="">
+      {% csrf_token %} {{ form.body.label_tag }}<br />
+      {{ form.body }}
+      <button type="submit" class="button is-primary">コメントを追加</button>
+    </form>
+    {% else %}
+    <p>
+      コメントを投稿するには<a href="{% url 'authentication:login' %}"
+        >ログイン</a
+      >が必要です。
+    </p>
+    {% endif %}
   </div>
   <div class="column is-one-quarter"></div>
 </div>

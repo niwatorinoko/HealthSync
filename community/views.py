@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, FormView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy, reverse
-from .models import Post
-from .form import PostForm
+from .models import Post, Comment
+from .form import PostForm, CommentForm
 
 
 class AuthorOnly(LoginRequiredMixin, UserPassesTestMixin):
@@ -33,6 +33,25 @@ class PostsDetailView(DetailView):
     model = Post
     template_name = 'community/posts_detail.html' 
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # コメントフォームをテンプレートに渡す
+        context['form'] = CommentForm()
+        # 該当の投稿に関連するコメントを取得
+        context['comments'] = Comment.objects.filter(post=self.object).order_by('-created_at')
+        return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.post = self.object
+            comment.save()
+            return redirect('community:detail', pk=self.object.pk)
+        return self.get(request, *args, **kwargs)
+    
 
 class PostsCreateView(FormView):
     template_name = 'community/posts_create.html'
