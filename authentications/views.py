@@ -1,9 +1,9 @@
 from django.views import generic
 from django.shortcuts import render, redirect
-from django.views.generic import FormView, View, DetailView
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.views.generic import FormView, View, DetailView, TemplateView
+from django.contrib.auth import authenticate, login, logout,get_user_model
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from .videos import VIDEO_LIBRARY
 
 from .forms import UserCreationForm, UserLoginForm
 
@@ -109,3 +109,40 @@ class UserProfileView(DetailView):
             'posts': user_posts
         }
         return render(request, self.template_name, context)
+    
+
+class SportPlanView(LoginRequiredMixin, TemplateView):
+    template_name = 'authentications/sports_plan.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+
+        sport = user.preferred_sports
+        level = user.fitness_level
+
+        beginner_title = VIDEO_LIBRARY[sport][0]['title']
+        beginner_benefits = VIDEO_LIBRARY[sport][0]['benefits']
+        beginner_url = VIDEO_LIBRARY[sport][0]['url']
+        intermediate_title = VIDEO_LIBRARY[sport][1]['title']
+        intermediate_benefits = VIDEO_LIBRARY[sport][1]['benefits']
+        intermediate_url = VIDEO_LIBRARY[sport][1]['url']
+        advanced_title = VIDEO_LIBRARY[sport][2]['title']
+        advanced_benefits = VIDEO_LIBRARY[sport][2]['benefits']
+        advanced_url = VIDEO_LIBRARY[sport][2]['url']
+
+        
+        context.update({
+            'sport': sport,
+            'level': level,
+            'beginner_title': beginner_title,
+            'beginner_benefits': beginner_benefits,
+            'beginner_url': beginner_url,
+            'intermediate_title': intermediate_title,
+            'intermediate_benefits': intermediate_benefits,
+            'intermediate_url': intermediate_url,
+            'advanced_title': advanced_title,
+            'advanced_benefits': advanced_benefits,
+            'advanced_url': advanced_url,
+        })
+        return context
