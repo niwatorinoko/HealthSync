@@ -63,6 +63,18 @@ class UserCreationForm(forms.ModelForm):
         widget=forms.Select(attrs={'style': 'margin-bottom: 30px; margin-left: 10px; width: 93%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;'})
     )
 
+    # New fields for height and weight
+    height = forms.FloatField(
+        required=True,
+        label='Height (cm)',
+        widget=forms.NumberInput(attrs={'style': 'margin-bottom: 30px; margin-left: 10px; width: 93%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;', 'placeholder': 'Enter height in cm'})
+    )
+    weight = forms.FloatField(
+        required=True,
+        label='Weight (kg)',
+        widget=forms.NumberInput(attrs={'style': 'margin-bottom: 30px; margin-left: 10px; width: 93%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;', 'placeholder': 'Enter weight in kg'})
+    )
+
     consent = forms.BooleanField(
         required=True, 
         widget=forms.CheckboxInput(attrs={'style': 'margin-right: 10px; margin-left: 40px;'})
@@ -93,6 +105,8 @@ class UserCreationForm(forms.ModelForm):
         user.specify_allergies = self.cleaned_data.get('specify_allergies')
         user.fitness_level = self.cleaned_data.get('fitness_level')
         user.preferred_sports = self.cleaned_data.get('preferred_sports')
+        user.height = self.cleaned_data.get('height')
+        user.weight = self.cleaned_data.get('weight')
 
         if commit:
             user.save()

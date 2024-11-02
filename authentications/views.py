@@ -95,14 +95,13 @@ class UserProfileView(DetailView):
     template_name = 'authentications/user_profile.html'
 
     def get(self, request, pk):
-        """ 
-        ユーザーとそのユーザーの全ての投稿を返す
-        """
         user = User.objects.get(id=pk)
         user_posts = user.post_set.all()
+        bmi = round(user.weight / (user.height / 100) ** 2, 1)
         context = {
             'user': user,
-            'posts': user_posts
+            'posts': user_posts,
+            'bmi': bmi
         }
         return render(request, self.template_name, context)
     

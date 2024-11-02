@@ -43,6 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     specify_allergies = models.CharField(max_length=255, blank=True)
     fitness_level = models.CharField(max_length=50, blank=True)
     preferred_sports = models.CharField(max_length=50, blank=True)
+    height = models.FloatField(null=True, blank=True, verbose_name='height (cm)')
+    weight = models.FloatField(null=True, blank=True, verbose_name='weight (kg)')
 
     objects = UserManager()
 
