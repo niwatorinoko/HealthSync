@@ -14,23 +14,43 @@ class PostForm(forms.ModelForm):
         self.fields['body'].label = 'Body'
         self.fields['image'].label = 'Image'
 
-    title = forms.CharField(widget=forms.TextInput(
-        attrs={
-            'class': 'input mb-5'
-        }
-    ))
+    title = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-input',
+                'placeholder': 'Enter the title of your post',
+                'id': 'title',
+                'required': True
+            }
+        ),
+        label='Title'
+    )
 
-    body = forms.CharField(widget=forms.TextInput(
-        attrs={
-            'class': 'input mb-5'
-        }
-    ))
+    body = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'class': 'form-input',
+                'placeholder': "Write something...",
+                'id': 'content',
+                'rows': 5,
+                'required': True
+            }
+        ),
+        label="What's on your mind?"
+    )
 
-    image = forms.ImageField(widget=forms.FileInput(
-        attrs={
-            'class': 'mb-5'
-        }
-    ))
+    image = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                'class': 'form-input',
+                'id': 'media',
+                'accept': 'image/*',
+                'onchange': 'previewImage(event)'
+            }
+        ),
+        label='Upload Image',
+        required=False
+    )
 
 class CommentForm(forms.ModelForm):
     """

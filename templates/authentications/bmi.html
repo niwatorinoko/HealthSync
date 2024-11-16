@@ -1,69 +1,84 @@
 <style>
+  /* BMI Table Styling */
+  .bmi-container {
+    background-color: #ed563b;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    color: #ffffff;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+
   table {
-    margin: 30px auto;
+    margin: 20px auto;
     border-collapse: collapse;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
   th,
   td {
     padding: 15px;
     border: 1px solid #ddd;
+    color: #ffffff;
   }
+
   th {
-    background-color: #4caf50;
-    color: white;
+    background-color: #e56742;
   }
+
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.1);
   }
+
   .note {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
+    margin-top: 20px;
     text-align: left;
-    color: #555;
+    color: #ffffff;
     font-size: 0.9em;
     line-height: 1.5;
   }
 </style>
-<h1>WHO BMI Classification</h1>
-<table>
-  <tr>
-    <th>BMI Value</th>
-    <th>Classification</th>
-  </tr>
-  <tr>
-    <td>Less than 18.5</td>
-    <td>Underweight</td>
-  </tr>
-  <tr>
-    <td>18.5 - 24.9</td>
-    <td>Normal weight</td>
-  </tr>
-  <tr>
-    <td>25 - 29.9</td>
-    <td>Overweight</td>
-  </tr>
-  <tr>
-    <td>30 - 34.9</td>
-    <td>Obesity Class I</td>
-  </tr>
-  <tr>
-    <td>35 - 39.9</td>
-    <td>Obesity Class II</td>
-  </tr>
-  <tr>
-    <td>40 and above</td>
-    <td>Obesity Class III</td>
-  </tr>
-</table>
-<div class="note">
-  <strong>Note:</strong> BMI is a general guideline and may not account for all
-  body types. For example, muscle mass can affect BMI, potentially classifying
-  muscular individuals as overweight. Additionally, BMI does not measure overall
-  health, as other factors such as age, gender, and individual health conditions
-  should also be considered. For a comprehensive health evaluation, please
-  consult a healthcare professional.
+  <!-- BMI Classification Table -->
+  <div class="bmi-container">
+    <h1>WHO BMI Classification</h1>
+    <table>
+      <tr>
+        <th>BMI Value</th>
+        <th>Classification</th>
+      </tr>
+      <tr>
+        <td>Less than 18.5</td>
+        <td>Underweight</td>
+      </tr>
+      <tr>
+        <td>18.5 - 24.9</td>
+        <td>Normal weight</td>
+      </tr>
+      <tr>
+        <td>25 - 29.9</td>
+        <td>Overweight</td>
+      </tr>
+      <tr>
+        <td>30 - 34.9</td>
+        <td>Obesity Class I</td>
+      </tr>
+      <tr>
+        <td>35 - 39.9</td>
+        <td>Obesity Class II</td>
+      </tr>
+      <tr>
+        <td>40 and above</td>
+        <td>Obesity Class III</td>
+      </tr>
+    </table>
+    <div class="note">
+      <strong>Note:</strong> BMI is a general guideline and may not account for
+      all body types. For a comprehensive health evaluation, consult a
+      healthcare professional.
+    </div>
+  </div>
 </div>

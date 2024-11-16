@@ -57,7 +57,7 @@ class UserCreationForm(forms.ModelForm):
         widget=forms.Select(attrs={'style': 'margin-bottom: 30px; margin-left: 10px; width: 93%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;'})
     )
     preferred_sports = forms.ChoiceField(
-        choices=[('', 'Select sports preference'), ('gym', 'Gym'), ('running', 'Running'), ('swimming', 'Swimming'), ('yoga', 'Yoga')],
+        choices=[('', 'Select sports preference'), ('badminton', 'Badminton'), ('running', 'Running'), ('swimming', 'Swimming'), ('yoga', 'Yoga')],
         required=True,
         label='Preferred Sports or Activities',
         widget=forms.Select(attrs={'style': 'margin-bottom: 30px; margin-left: 10px; width: 93%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;'})
@@ -127,14 +127,12 @@ class UserChangeForm(forms.ModelForm):
 class UserLoginForm(forms.Form):
     email = forms.EmailField(label='E-mail address', widget=forms.TextInput(
         attrs={
-            'class': 'input mb-4',
             'placeholder': 'E-mail address'
         }
     ))
 
     password = forms.CharField(label='Password', widget=forms.PasswordInput(
         attrs={
-            'class': 'input mb-4',
             'placeholder': 'Password'
         }
     ))

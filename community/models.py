@@ -25,7 +25,7 @@ class Post(Common):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Author')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')
     title = models.CharField(max_length=50, verbose_name='Title')
-    body = models.CharField(max_length=300, verbose_name='Content')
+    body = models.TextField(max_length=300, verbose_name='Content')
     image = models.ImageField(upload_to="", verbose_name='Image')
 
     class Meta:

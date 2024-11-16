@@ -1,65 +1,65 @@
 VIDEO_LIBRARY = {
     'yoga': [
         {
-            'title': '45-Minute Gentle Yoga for Beginners | Relaxing Session',
+            'title': 'Yoga for Beginners',
             'level': 'beginner',
-            'benefits': 'Full body relaxation and stress relief',
-            'url': 'https://www.youtube.com/embed/u_2OjiSs-fQ?si=U80l_Gq07RYwP_rl'
+            'benefits': 'Yoga helps beginners develop flexibility, balance, and relaxation. It is a gentle way to improve posture and reduce stress while learning basic breathing techniques.',
+            'url': 'https://www.youtube.com/embed/j7rKKpwdXNE'
         },
         {
-            'title': '50-Minute Yoga Class for Intermediate to Advanced Levels',
+            'title': 'Intermediate Yoga',
             'level': 'intermediate',
-            'benefits': 'Enhanced physical endurance and flexibility',
-            'url': 'https://www.youtube.com/watch?v=fcYMjMTELkg'
+            'benefits': 'At this level, yoga enhances strength, flexibility, and mental clarity. Practitioners can deepen their practice with more challenging poses and advanced breathing exercises.',
+            'url': 'https://www.youtube.com/embed/ZbtVVYBLCug'
         },
         {
-            'title': 'Yoga Class for Intermediate to Advanced Levels',
+            'title': 'Advanced Yoga',
             'level': 'advanced',
-            'benefits': 'Challenge with advanced poses and concentration improvement',
-            'url': 'https://www.youtube.com/watch?v=ZelAsk816KA'
+            'benefits': 'Advanced yoga offers the opportunity to refine posture alignment, build endurance, and achieve deep mental focus. It is also beneficial for enhancing physical performance in other activities and promoting long-term well-being.',
+            'url': 'https://www.youtube.com/embed/CiaD3jP0YhA?start=8'
         },
     ],
     'running': [
         {
-            'title': 'Running Basics for Beginners: Proper Footwork and Posture',
+            'title': 'Running for Beginners',
             'level': 'beginner',
-            'benefits': 'Learning proper running form and foot placement',
-            'url': 'https://www.youtube.com/watch?v=o4kKV4Q_Aw8'
+            'benefits': 'Running improves cardiovascular health and endurance while helping to build stamina. It is an accessible workout to increase energy levels and reduce stress. ',
+            'url': 'https://www.youtube.com/embed/kVnyY17VS9Y?start=4'
         },
         {
-            'title': 'How to Improve Running Pace for Intermediate Runners',
+            'title': 'Intermediate Running',
             'level': 'intermediate',
-            'benefits': 'Mastering efficient running and increasing pace',
-            'url': 'https://www.youtube.com/watch?v=ReT8kN0gt_0'
+            'benefits': 'Intermediate runners experience improved speed, endurance, and muscle tone. They can start incorporating interval training to increase their performance and tackle longer distances.',
+            'url': 'https://www.youtube.com/embed/sfCBCf0mX1E'
         },
         {
-            'title': 'Strength Training for Marathon Running: Advanced Tips',
+            'title': 'Advanced Running',
             'level': 'advanced',
-            'benefits': 'Strength training to improve marathon times',
-            'url': 'https://www.youtube.com/watch?v=8uyghmMdCOg'
+            'benefits': 'Advanced runners can focus on maximizing speed, efficiency, and form. They may engage in competitive racing or focus on optimizing recovery and injury prevention.',
+            'url': 'https://www.youtube.com/embed/RC1lrx1IhLw'
         },
     ],
     'swimming': [
         {
-            'title': '3 Swim Workouts for Beginners',
+            'title': 'Swimming for Beginners',
             'level': 'beginner',
-            'benefits': 'Learning basic freestyle swimming techniques',
-            'url': 'https://www.youtube.com/embed/XmFQE-PsBl0?si=5zVZPYy3430iqwcp'
+            'benefits': 'Swimming offers a full-body workout that increases flexibility and strength, while being easy on the joints. It is great for building confidence in the water and improving breathing techniques.',
+            'url': 'https://www.youtube.com/embed/p6ROh-M7S0k'
         },
         {
-            'title': 'Endurance Swimming Drills for Intermediate Swimmers',
+            'title': 'Intermediate Swimming',
             'level': 'intermediate',
-            'benefits': 'Improving endurance and swimming technique',
-            'url': 'https://www.youtube.com/watch?v=3F5e1sQzGgI'
+            'benefits': 'For intermediates, swimming enhances cardiovascular health and builds muscle strength. Focusing on stroke technique and speed helps to boost overall performance.',
+            'url': 'https://www.youtube.com/embed/LQViXRQBslQ'
         },
         {
-            'title': 'Mastering Butterfly Technique for Advanced Swimmers',
+            'title': 'Advanced Swimming',
             'level': 'advanced',
-            'benefits': 'Enhancing butterfly technique and muscle strength',
-            'url': 'https://www.youtube.com/watch?v=5Gk9gY1ynMU'
+            'benefits': 'Advanced swimmers can concentrate on refining their technique, increasing speed, and developing endurance for competitive races or challenging endurance events.',
+            'url': 'https://www.youtube.com/embed/kcFt2-moi1E'
         },
     ],
-    'gym': [
+    'badminton': [
         {
             'title': 'Basic Full-Body Gym Workout for Beginners',
             'level': 'beginner',

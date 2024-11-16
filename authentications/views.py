@@ -66,18 +66,16 @@ class AuthenticationsLoginView(UnauthenticatedOnly ,FormView):
     form_class = UserLoginForm
 
     def post(self, request, *args, **kwargs):
-        """ 
-        Postリクエスト時の処理
-        送信されたメールアドレスとパスワードでユーザーを検索し見つかったらログインする
-        見つからなかったらログインページを返す
-        """
-        email = request.POST['email']
-        password = request.POST['password']
-        user = authenticate(email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('authentications:index')
-        return redirect('authentications:login')
+        form = self.get_form()
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('authentications:index')
+        # フォームエラー時に再度ログインページを表示
+        return self.form_invalid(form)
 
 class AuthenticationsLogoutView(View):
     """

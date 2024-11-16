@@ -1,11 +1,42 @@
-{% extends 'base_1.html' %} {% block content %}
-<div class="columns is-centered" style="padding-top: 80px">
-  <div class="column is-half has-background-link-light">
-    <h1 class="is-size-1">Login</h1>
-    <hr />
-    <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
-      <button class="button is-primary">Login</button>
+{% extends 'base.html' %} {% block content %}
+<div class="login-container">
+  <div class="login-form">
+    <h1>Login</h1>
+    <form method="POST" action="{% url 'authentications:login' %}">
+      {% csrf_token %}
+
+      <!-- E-mail Field -->
+      <div class="form-group">
+        <label for="email" class="form-label">E-mail address</label>
+        <input
+          id="email"
+          class="form-input"
+          type="email"
+          name="email"
+          placeholder="Enter your e-mail address"
+          class="input mb-4"
+          required
+        />
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input
+          id="password"
+          class="form-input"
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          class="input mb-4"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button class="form-button" type="submit">Login</button>
+      </div>
     </form>
   </div>
 </div>

@@ -20,17 +20,17 @@
       rel="stylesheet"
       href="{% static 'css/templatemo-training-studio.css' %}"
     />
-
-    <!--  Bulma css CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
   </head>
 
   <body>
     {% include 'header.html' %} {% block content %}{% endblock content %}
 
+    <!-- Footer -->
+    <footer>
+      &copy; 2024 HealthSync. Made by
+      <a href="https://www.instagram.com/as_nhoonn">Nelda</a> and
+      <a href="https://www.instagram.com/xiong.mao22">Rean</a>
+    </footer>
     <!-- jQuery -->
     <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
     <!-- Bootstrap -->
@@ -45,5 +45,11 @@
     <script src="{% static 'js/accordions.js' %}"></script>
     <!-- Global Init -->
     <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
   </body>
 </html>

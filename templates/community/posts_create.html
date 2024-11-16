@@ -1,15 +1,66 @@
-{% extends 'base_1.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
+<div class="post-content-container">
+  <div class="form-wrapper">
+    <h1 class="form-title">Create a Post</h1>
 
-<div class="columns is-centered" style="padding-top: 80px">
-  <div class="column is-half has-background-link-light">
     <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %} {{ form.as_p }}
-      <a class="button is-info mr-3" href="{{ request.META.HTTP_REFERER }}"
-        >Back</a
-      >
-      <button class="button is-primary">Post</button>
+      {% csrf_token %}
+
+      <!-- Title Field -->
+      <div class="form-group">
+        <label for="id_title" class="form-label1">Title</label>
+        {{ form.title }}
+      </div>
+
+      <!-- Content Field -->
+      <div class="form-group">
+        <label for="id_body" class="form-label1">Body</label>
+        {{ form.body }}
+      </div>
+
+      <!-- Image Upload Field -->
+      <div class="form-group media-upload">
+        <label for="id_image" class="form-label1">Upload Image</label>
+        {{ form.image }}
+        <div class="preview-container">
+          <img
+            id="image-preview"
+            class="image-preview"
+            alt="Preview will appear here"
+          />
+        </div>
+      </div>
+
+      <!-- Back and Submit Buttons -->
+      <div class="form-actions mt-4">
+        <a class="button is-info mr-3" href="{{ request.META.HTTP_REFERER }}"
+          >Back</a
+        >
+        <button class="button is-primary" type="submit">Post</button>
+      </div>
     </form>
   </div>
 </div>
 
+<!-- JavaScriptコード -->
+<script>
+  function previewImage(event) {
+    const preview = document.getElementById("image-preview");
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function () {
+        preview.src = reader.result;
+        preview.style.display = "block";
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+      preview.style.display = "none";
+    }
+  }
+</script>
 {% endblock content %}
