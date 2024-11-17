@@ -1,46 +1,29 @@
-{% extends 'base_1.html' %} {% block content %}
-<div class="columns is-centered" style="padding-top: 80px">
-  <div class="column is-half">
-    <!-- Create Post Button -->
-    <div class="has-text-right mb-4">
-      <a
-        href="{% url 'community:create' %}"
-        class="button is-primary is-medium"
-      >
-        <span class="icon"><i class="fas fa-plus"></i></span>
-        <span>Create Post</span>
-      </a>
-    </div>
+{% extends 'base.html' %}
+{% block content %}
+<div class="custom-container">
+  <!-- Create Post Button -->
+  <div class="custom-button-container">
+    <a href="{% url 'community:create' %}" class="custom-create-button">
+      <span>Create Post</span>
+    </a>
+  </div>
 
+  <!-- Post List -->
+  <div class="custom-post-list">
     {% for item in object_list %}
-    <div class="box">
-      <article class="media">
-        <div class="media-left">
-          <img
-            src="{{ item.image.url }}"
-            alt="{{ item.title }}"
-            width="270"
-            height="420"
-          />
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <a href="{% url 'community:detail' item.pk %}">
-              <strong class="has-text-black is-size-4">{{ item.title }}</strong>
-            </a>
-            <p class="is-size-5 mt-2">
-              <span class="has-text-grey">by</span>
-              <strong class="has-text-black">{{ item.author }}</strong>
-            </p>
-            <p class="is-size-6 mt-2">{{ item.created_at|date:"Y/m/d H:i" }}</p>
-          </div>
-        </div>
-      </article>
+    <div class="custom-post-card">
+      <div class="custom-post-image-container">
+        <img src="{{ item.image.url }}" alt="{{ item.title }}" class="custom-post-image" />
+      </div>
+      <div class="custom-post-content">
+        <a href="{% url 'community:detail' item.pk %}" class="custom-post-title">{{ item.title }}</a>
+        <p class="custom-post-meta">by <strong>{{ item.author }}</strong> &bull; <span>{{ item.created_at|date }}</span></p>
+        <p class="custom-post-excerpt">{{ item.body|truncatewords:30 }}</p>
+      </div>
     </div>
     {% empty %}
-    <p class="has-text-centered is-size-5">No posts</p>
+    <p class="custom-no-posts">No posts available</p>
     {% endfor %}
   </div>
 </div>
-
 {% endblock content %}

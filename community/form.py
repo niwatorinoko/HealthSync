@@ -58,7 +58,8 @@ class CommentForm(forms.ModelForm):
     """
     body = forms.CharField(widget=forms.TextInput(
         attrs={
-            'class': 'input'
+            'placeholder': 'Write a comment...',
+            'required': True
         }
     ))
 
