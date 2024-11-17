@@ -1,0 +1,71 @@
+{% load static %}
+<div class="nutrition-title-bar">
+  <h1><b>Badminton Nutrition Guide</b></h1>
+</div>
+<!-- Slider Container -->
+<div class="yoga-slider-container">
+  <div class="yoga-slider">
+    <div class="yoga-slides">
+      <!-- Slide 1 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/granewraps.png' %}" alt="Chia Seeds" />
+        <div class="yoga-slide-content">
+          <h2>Whole Grain Wraps</h2>
+          <p>
+            Whole grain wraps are an excellent source of quick-digesting carbohydrates, providing
+            immediate energy and supporting blood sugar stability.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/greekyogurt.png' %}" alt="Spinach" />
+        <div class="yoga-slide-content">
+          <h2>Greek Yogurt</h2>
+          <p>
+            High in protein and calcium, Greek yogurt aids in muscle repair and helps maintain bone
+            strength. Its probiotics support digestive health.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/fruit.png' %}" alt="Almonds" />
+        <div class="yoga-slide-content">
+          <h2>Fruits <br />(Oranges, Apples)</h2>
+          <p>
+            These hydrating fruits are rich in natural sugars, offering quick energy bursts. Their
+            high vitamin C content boosts immunity as well.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/nuts.png' %}" alt="Berries" />
+        <div class="yoga-slide-content">
+          <h2>Nuts <br />(Walnuts, Cashews)</h2>
+          <p>
+            Provide a combination of healthy fats, protein, and magnesium. They offer sustained
+            energy and reduce muscle fatigue, ensuring endurance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="yoga-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="yoga-summary">
+  <h3><b>Why These Foods?</b></h3>
+  <p>
+    These foods enhance agility and endurance, providing the necessary fuel for quick movements and
+    recovery in badminton.
+  </p>
+</div>
+<script src="{% static 'js/yoga-slider.js' %}"></script>

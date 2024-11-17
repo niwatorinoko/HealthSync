@@ -1,0 +1,72 @@
+{% load static %}
+<div class="nutrition-title-bar">
+  <h1><b>Yoga Nutrition Guide</b></h1>
+</div>
+
+<!-- Slider Container -->
+<div class="yoga-slider-container">
+  <div class="yoga-slider">
+    <div class="yoga-slides">
+      <!-- Slide 1 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/chiaseeds.png' %}" alt="Chia Seeds" />
+        <div class="yoga-slide-content">
+          <h2>Chia Seeds</h2>
+          <p>
+            These tiny seeds are power-packed with omega-3 fatty acids, which reduce inflammation,
+            and fiber, which promotes digestive health.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/spinach.png' %}" alt="Spinach" />
+        <div class="yoga-slide-content">
+          <h2>Spinach</h2>
+          <p>
+            A rich source of iron and magnesium, spinach helps combat fatigue and supports muscle
+            function and relax muscle.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/almond.png' %}" alt="Almonds" />
+        <div class="yoga-slide-content">
+          <h2>Almonds</h2>
+          <p>
+            High in healthy fats, protein, and vitamin E, almonds boost energy and enhance brain
+            health, supporting focus during yoga practice.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/berries.png' %}" alt="Berries" />
+        <div class="yoga-slide-content">
+          <h2>Berries</h2>
+          <p>
+            Loaded with antioxidants like vitamin C and polyphenols, berries fight oxidative stress
+            caused by physical exertion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="yoga-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="yoga-summary">
+  <h3><b>Why These Foods?</b></h3>
+  <p>
+    These foods promote flexibility, energy, and recovery, essential for yoga practice, which
+    emphasizes mindfulness and physical endurance.
+  </p>
+</div>
+<script src="{% static 'js/yoga-slider.js' %}"></script>

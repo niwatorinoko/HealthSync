@@ -61,22 +61,22 @@ VIDEO_LIBRARY = {
     ],
     'badminton': [
         {
-            'title': 'Basic Full-Body Gym Workout for Beginners',
+            'title': 'Badminton for Beginners',
             'level': 'beginner',
-            'benefits': 'Building fundamental strength and stamina',
-            'url': 'https://www.youtube.com/watch?v=H1cQ64C61Ho'
+            'benefits': 'Beginners improve hand-eye coordination, fitness, and cardiovascular health while learning basic techniques like grips and footwork. Playing also provides stress relief and social interaction.',
+            'url': 'https://www.youtube.com/embed/bJuiT6xzPuI'
         },
         {
-            'title': 'Gym Workout for Intermediate Level: Strength and Endurance',
+            'title': 'Intermediate Badminton',
             'level': 'intermediate',
-            'benefits': 'Balancing strength and endurance training',
-            'url': 'https://www.youtube.com/watch?v=H1cQ64C61Ho'
+            'benefits': 'Intermediate players benefit from increased agility, endurance, and muscle strength as they engage in longer rallies. They also develop strategic thinking, better shot placement, and body control, which enhance their overall performance.',
+            'url': 'https://www.youtube.com/embed/XfNghQJ-zpA'
         },
         {
-            'title': 'HIIT Gym Session for Advanced: High-Intensity Training',
+            'title': 'Advanced Badminton',
             'level': 'advanced',
-            'benefits': 'Fat burning and cardio improvement',
-            'url': 'https://www.youtube.com/watch?v=H1cQ64C61Ho'
+            'benefits': 'Advanced players achieve peak physical fitness, mental toughness, and precision through intense, high-stakes matches. They master tactical play, deceptive shots, and leadership skills, particularly in competitive doubles games.',
+            'url': 'https://www.youtube.com/embed/DxoPYeNIFYE'
         },
     ],
 }

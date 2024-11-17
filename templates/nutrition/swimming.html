@@ -1,0 +1,72 @@
+{% load static %}
+<div class="nutrition-title-bar">
+  <h1><b>Swimming Nutrition Guide</b></h1>
+</div>
+
+<!-- Slider Container -->
+<div class="yoga-slider-container">
+  <div class="yoga-slider">
+    <div class="yoga-slides">
+      <!-- Slide 1 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/salmon.png' %}" alt="Chia Seeds" />
+        <div class="yoga-slide-content">
+          <h2>Salmon</h2>
+          <p>
+            Rich in omega-3 fatty acids, salmon helps to reduce inflammation and supports joint
+            health. Its high protein content also aids muscle repair after rigorous sessions.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/quinoa.png' %}" alt="Spinach" />
+        <div class="yoga-slide-content">
+          <h2>Quinoa</h2>
+          <p>
+            Complete protein containing all nine essential amino acids, quinoa provides sustained
+            energy and aids recovery.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/coconut.png' %}" alt="Almonds" />
+        <div class="yoga-slide-content">
+          <h2>Coconut Water</h2>
+          <p>
+            A natural source of electrolytes like potassium, magnesium, and sodium, coconut water
+            helps maintain hydration levels, reducing the risk of cramps and fatigue.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/pasta.png' %}" alt="Berries" />
+        <div class="yoga-slide-content">
+          <h2>Pasta <br />(Whole Grain)</h2>
+          <p>
+            Whole grain pasta provide the energy needed for endurance in the pool. Its high fiber
+            content also supports digestive health.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="yoga-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="yoga-summary">
+  <h3><b>Why These Foods?</b></h3>
+  <p>
+    These foods support endurance, recovery, and hydration, which are vital for swimmers who engage
+    in rigorous training.
+  </p>
+</div>
+<script src="{% static 'js/yoga-slider.js' %}"></script>

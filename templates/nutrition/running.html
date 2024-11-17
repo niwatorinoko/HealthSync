@@ -1,0 +1,69 @@
+{% load static %}
+<div class="nutrition-title-bar">
+  <h1><b>Running Nutrition Guide</b></h1>
+</div>
+
+<!-- Slider Container -->
+<div class="yoga-slider-container">
+  <div class="yoga-slider">
+    <div class="yoga-slides">
+      <!-- Slide 1 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/patmeal.png' %}" alt="Chia Seeds" />
+        <div class="yoga-slide-content">
+          <h2>Oatmeal</h2>
+          <p>
+            Provides a slow and steady release of energy, avoid mid-run crashes, ensures stable
+            blood sugar levels, promote endurance.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/bananas.png' %}" alt="Spinach" />
+        <div class="yoga-slide-content">
+          <h2>Bananas</h2>
+          <p>
+            Bananas is ideal for pre-run snacks since they offers a quick energy boost , prevents
+            muscle cramps and maintains electrolyte balance
+          </p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/potatoes.png' %}" alt="Almonds" />
+        <div class="yoga-slide-content">
+          <h2>Sweet Potatoes</h2>
+          <p>Loaded with vitamins and complex carbs, they replenish glycogen stores post-run.</p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="yoga-slide">
+        <img src="{% static 'images/foods/protein.png' %}" alt="Berries" />
+        <div class="yoga-slide-content">
+          <h2>Lean Protein <br />(Chicken, Fish)</h2>
+          <p>
+            Chicken and fish provide high-quality protein along with other nutrients like zinc and
+            omega-3s, which reduce inflammation and support recovery.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="yoga-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="yoga-summary">
+  <h3><b>Why These Foods?</b></h3>
+  <p>
+    These foods fuel endurance, support recovery, and maintain energy levels, crucial for both short
+    and long-distance running.
+  </p>
+</div>
+<script src="{% static 'js/yoga-slider.js' %}"></script>

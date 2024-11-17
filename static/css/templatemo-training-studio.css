@@ -1112,7 +1112,6 @@ Login Form Styling
 }
 
 .login-form h1 {
-
   font-weight: 600;
   color: #ed563b;
   text-align: center;
@@ -1523,3 +1522,192 @@ responsive
     margin-left: 130px;
   }
 }
+
+/* ---------------------------------------------
+Yoga Foods Slider Styles
+--------------------------------------------- */
+
+.yoga-title-bar {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.yoga-title-bar h1 {
+  font-family: "Poppins", sans-serif; /* Font chữ đồng nhất */
+  font-size: 35px; /* Kích thước chữ */
+  font-weight: 600; /* Đậm vừa */
+  color: #000000; /* Màu chữ */
+  margin-top: 100px;
+}
+
+.yoga-slider-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.yoga-slider {
+  text-align: justify;
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.yoga-slides {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+.yoga-slide {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  width: 600px;
+}
+
+.yoga-slide img {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  border-right: 2px solid #f4f4f9;
+}
+
+.yoga-slide-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.yoga-slide-content h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ed563b;
+}
+
+.yoga-slide-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.yoga-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.yoga-dots span {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.yoga-dots span.active {
+  background-color: #007bff;
+}
+
+.yoga-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 縦方向の中央寄せ */
+  max-width: 600px; /* 幅を調整して中央に配置 */
+  margin: 30px auto; /* 上下左右中央に配置 */
+  padding: 30px;
+  background-color: #b4402b;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.yoga-summary h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.yoga-summary p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Nutrition Guide Container */
+.nutrition-guide-container {
+  max-width: 800px;
+  margin: 50px auto;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Bar */
+.nutrition-title-bar {
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 2px solid #ed563b;
+  margin-bottom: 20px;
+}
+
+.nutrition-title-bar h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  color: #333;
+  margin: 0;
+}
+
+/* Information List */
+.nutrition-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.nutrition-info-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+.nutrition-info-list li strong {
+  color: #ed563b;
+  margin-right: 10px;
+}
+
+/* No Selection Message */
+.no-selection {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+/* ---------------------------------------------
+Yoga Nutrition Plan Styles
+--------------------------------------------- */
