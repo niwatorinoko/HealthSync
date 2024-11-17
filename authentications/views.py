@@ -157,15 +157,13 @@ class NutritionPlanView(LoginRequiredMixin, TemplateView):
 
         # パーソナライズされた栄養ガイドを生成
         nutrition_guide = personalized_nutrition_guide(
-            sport=sport,
-            age_group=age_group,
             health_condition=health_condition,
             food_allergies=food_allergies,
             dietary_preference=dietary_preference
         )
 
         # Sample_Menuが辞書かどうかを確認
-        sample_menu_is_dict = isinstance(nutrition_guide.get("Sample Menu"), dict)
+        sample_menu_is_dict = isinstance(nutrition_guide.get("sample_menu"), dict)
 
         # コンテキストに栄養ガイド情報を追加
         context.update({
@@ -175,6 +173,6 @@ class NutritionPlanView(LoginRequiredMixin, TemplateView):
             'food_allergies': food_allergies,
             'dietary_preference': dietary_preference,
             'nutrition_guide': nutrition_guide,
-            'sample_menu_is_dict': sample_menu_is_dict,  # 追加
+            'sample_menu_is_dict': sample_menu_is_dict,
         })
         return context

@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
 <div class="nutrition-guide-container">
+  <!-- タイトルバー -->
   <div class="nutrition-title-bar">
-    <h1><b>Basic Information</b></h1>
+    <h1><b>Personalized Nutrition Plan</b></h1>
   </div>
 
+  <!-- ユーザー情報の表示 -->
   <ul class="nutrition-info-list">
     <li><strong>Sport:</strong> {{ sport }}</li>
     <li><strong>Age Group:</strong> {{ age_group }}</li>
@@ -14,7 +16,6 @@
     <li><strong>Food Allergies:</strong> {{ food_allergies }}</li>
     <li><strong>Dietary Preference:</strong> {{ dietary_preference }}</li>
   </ul>
-
   {% if sport == 'running' %}
     {% include 'nutrition/running.html' %}
   {% elif sport == 'yoga' %}
@@ -23,8 +24,37 @@
     {% include 'nutrition/badminton.html' %}
   {% elif sport == 'swimming' %}
     {% include 'nutrition/swimming.html' %}
-  {% else %}
-    <p class="no-selection">スポーツが選択されていません。プランを選んでください。</p>
+  {% endif %}
+
+  <!-- パーソナライズされた栄養ガイド -->
+  {% if nutrition_guide %}
+
+  <div class="nutrition-title-bar">
+    <h1><b>Personalized Nutrition Guide</b></h1>
+  </div>
+  <ul class="nutrition-info-list">
+    <li><strong>Health Condition:</strong> {{ nutrition_guide.health_condition }}</li>
+    <li><strong>Food Allergies:</strong> {{ nutrition_guide.food_allergies }}</li>
+    <li><strong>Dietary Preference:</strong> {{ nutrition_guide.dietary_preference }}</li>
+  </ul>
+  
+  <div class="nutrition-guide-section">
+    <!-- サンプルメニューの表示 -->
+    {% if sample_menu_is_dict %}
+    <div class="sample-menu">
+      <h3><b>Sample Menu</b></h3>
+      <ul class="nutrition-details-list">
+        <li><strong>Breakfast:</strong> {{ nutrition_guide.sample_menu.breakfast }}</li>
+        <li><strong>Lunch:</strong> {{ nutrition_guide.sample_menu.lunch }}</li>
+        <li><strong>Dinner:</strong> {{ nutrition_guide.sample_menu.dinner }}</li>
+        <li><strong>Snacks:</strong> {{ nutrition_guide.sample_menu.snacks }}</li>
+        <li><strong>Supplements:</strong> {{ nutrition_guide.sample_menu.supplements }}</li>
+      </ul>
+    </div>
+    {% else %}
+    <p class="no-selection">No sample menu available for the selected options.</p>
+    {% endif %}
+  </div>
   {% endif %}
 </div>
 

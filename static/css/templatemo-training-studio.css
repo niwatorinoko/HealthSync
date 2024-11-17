@@ -1651,8 +1651,7 @@ Yoga Foods Slider Styles
 .nutrition-guide-container {
   max-width: 800px;
   margin: 50px auto;
-  margin-top: 100px;
-  padding: 20px;
+  padding: 30px;
   background-color: #f9f9f9;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1662,9 +1661,8 @@ Yoga Foods Slider Styles
 .nutrition-title-bar {
   text-align: center;
   padding-bottom: 20px;
-  padding-top: 20px;
   border-bottom: 2px solid #ed563b;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .nutrition-title-bar h1 {
@@ -1678,26 +1676,74 @@ Yoga Foods Slider Styles
 .nutrition-info-list {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
 .nutrition-info-list li {
   font-size: 18px;
-  margin-bottom: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .nutrition-info-list li strong {
   color: #ed563b;
-  margin-right: 10px;
 }
 
-/* No Selection Message */
+/* Nutrition Guide Section */
+.nutrition-guide-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.nutrition-details-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.nutrition-details-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+/* Sample Menu */
+.sample-menu {
+  margin-top: 20px;
+}
+
+.sample-menu h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ed563b;
+  text-align: center;
+}
+
+.sample-menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sample-menu-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
 .no-selection {
   text-align: center;
   font-size: 16px;
@@ -1707,6 +1753,7 @@ Yoga Foods Slider Styles
   border-radius: 10px;
   margin-top: 30px;
 }
+
 
 /* 
 ---------------------------------------------
