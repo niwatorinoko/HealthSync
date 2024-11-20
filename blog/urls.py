@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import ExpertsView, MentalView, SleepRecoveryView
 
-app_name = 'news'
+app_name = 'blog'
 
 urlpatterns = [
     path('experts/', ExpertsView.as_view(), name='experts'),

@@ -428,20 +428,22 @@
                 <p>
                   The mind and body are deeply intertwined, with mental and physical health influencing one another. Understanding this connection can help improve overall wellness and create a balanced, healthier life.
                 </p>
-                </ul>
-              </div>
+                <a href="{% url 'blog:mental' %}" class="text-button">Discover more</a>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="trainer-item">
-              <div class="image-thumb">
-                <img src="{% static 'images/pic2.png' %}" alt="" />
-              </div>
-              <div class="down-content">
-                <span>Sleep and Recovery</span>
-                <p>
-                  Discover effective tips and habits to improve sleep quality, promoting better physical and mental health. Prioritize restful sleep to enhance mood, energy levels, and overall productivity through a day.
-                </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="trainer-item">
+            <div class="image-thumb">
+              <img src="{% static 'images/pic2.png' %}" alt="" />
+            </div>
+            <div class="down-content">
+              <span>Sleep and Recovery</span>
+              <p>
+                Discover effective tips and habits to improve sleep quality, promoting better physical and mental health. Prioritize restful sleep to enhance mood, energy levels, and overall productivity through a day.
+              </p>
+              <a href="{% url 'blog:sleeprecovery' %}" class="text-button">Discover more</a>
               </div>
             </div>
           </div>
@@ -455,6 +457,7 @@
                 <p>
                   Get practical guidance from health and wellness experts on nutrition, and exercise. Expert advice offers valuable tips and evidence-based strategies to help you live a healthier, more balanced life.
                 </p>
+                <a href="{% url 'blog:experts' %}" class="text-button">Discover more</a>
               </div>
             </div>
           </div>
