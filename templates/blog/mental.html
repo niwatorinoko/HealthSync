@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/mental-physical-wellness.css' %}" />
+<section class="mpw-main-container">
+  <div class="container">
+    <div>
+      <h1 class="mpw-title">The Connection Between Mind and Body</h1>
+      <p class="mpw-description">
+        Explore how your mental and physical health are interconnected and learn actionable steps to
+        improve both.
+      </p>
+      <p class="mpw-quote">"A healthy mind fosters a healthy body."</p>
+    </div>
+
+    <div class="mpw-content">
+      <div class="mpw-section-left">
+        <h2 class="mpw-heading">Why Mental and Physical Health are Connected?</h2>
+        <p class="mpw-text">
+          Stress weakens your immune system, while regular exercise boosts endorphins, improving
+          your mood and resilience.
+        </p>
+        <img src="{% static 'images/mental.png' %}" alt="Mind-Body Infographic" class="mpw-image" />
+      </div>
+
+      <div class="mpw-section-right">
+        <h2 class="mpw-heading">Steps to Improve Both</h2>
+        <ul class="mpw-steps-list">
+          <li><i class="fa fa-check-circle"></i> Exercise for 30 minutes daily</li>
+          <li><i class="fa fa-check-circle"></i> Practice 5-10 minutes of meditation</li>
+          <li><i class="fa fa-check-circle"></i> Eat a balanced diet</li>
+        </ul>
+        <div class="mpw-video">
+          <iframe
+            src="https://www.youtube.com/embed/EKEWk4oWmjY"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="mpw-insights">
+      <h3 class="mpw-insights-title">Expert Insights</h3>
+      <p class="mpw-insights-text">
+        "Integrating exercise and mindfulness can significantly improve your well-being." - Jane
+        Doe, Health Coach
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

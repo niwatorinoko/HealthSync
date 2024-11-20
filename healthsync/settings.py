@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'authentications',
     'community',
     'news',
+    'blog',
 ]
 
 MIDDLEWARE = [

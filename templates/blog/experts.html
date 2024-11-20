@@ -1,0 +1,100 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/mental-physical-wellness.css' %}" />
+<section class="expert-advice-container">
+  <!-- Header -->
+  <div class="expert-header">
+    <h1 class="expert-title">The Best Wellness Advice from Taiwan's Experts</h1>
+    <p class="expert-description">
+      Practical and diverse content to improve your nutrition, fitness, and mindfulness—backed by
+      Taiwan's top professionals.
+    </p>
+    <p class="expert-quote">"A small change each day leads to remarkable transformations."</p>
+  </div>
+
+  <!-- Main Content Sections -->
+  <div class="expert-content">
+    <!-- Nutrition Section -->
+    <div class="expert-block">
+      <h2 class="block-title">🍎 Nutrition Insights</h2>
+      <p>Dr. Lin Mei-Yu shares simple tips to boost your diet:</p>
+      <ul class="habits-list">
+        <li><i class="fa fa-check-circle"></i> Include more colorful vegetables in your meals.</li>
+        <li><i class="fa fa-check-circle"></i> Replace sugary drinks with herbal teas.</li>
+        <li><i class="fa fa-check-circle"></i> Plan meals in advance to avoid unhealthy snacks.</li>
+      </ul>
+    </div>
+
+    <!-- Fitness Section -->
+    <div class="expert-block">
+      <h2 class="block-title">🏋️ Weekly Fitness Plan</h2>
+      <p>Trainer Chang Wei's beginner-friendly workout:</p>
+      <table class="workout-schedule">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Exercise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>10 push-ups, 15 squats, 20-min walk</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Yoga stretches for 30 minutes</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Light jog for 20 minutes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mindfulness Section -->
+    <div class="expert-block">
+      <h2 class="block-title">🧘 Mindfulness Practices</h2>
+      <p>Dr. Yu Li-Hua suggests starting your day with mindfulness:</p>
+      <p
+        style="
+          margin-top: 30px;
+          text-align: justify;
+          color: rgb(0, 0, 0);
+          font-size: 17px;
+          font-style: italic;
+        "
+      >
+        "Begin your morning with 5 deep breaths, focus on the present moment, and express gratitude
+        for 3 things in your life."
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Feature: Sleep Quality Quiz -->
+  <div class="expert-quiz">
+    <h2 class="quiz-title">🛏️ How Good is Your Sleep?</h2>
+    <p
+      style="margin-bottom: 30px; text-align: center; color: rgb(255, 255, 255); font-style: italic"
+    >
+      Take this short quiz to discover tips for better sleep.
+    </p>
+    <form>
+      <label for="sleep-hours">How many hours do you sleep daily?</label>
+      <input type="number" id="sleep-hours" placeholder="Enter hours" min="0" max="24" />
+
+      <label for="sleep-quality">How would you rate your sleep quality?</label>
+      <select id="sleep-quality">
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="fair">Fair</option>
+        <option value="poor">Poor</option>
+      </select>
+
+      <button type="button" class="btn-primary" onclick="showSleepTips()">Get Tips</button>
+    </form>
+    <div id="sleep-tips"></div>
+  </div>
+</section>
+<script src="{% static 'js/advice.js' %}"></script>
+{% endblock %}

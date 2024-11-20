@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/mental-physical-wellness.css' %}" />
+<section class="sleep-container">
+  <div class="container">
+    <!-- Page Title and Header -->
+    <div class="header-section">
+      <h1 class="sleep-title">The Power of Restful Sleep</h1>
+      <p class="mpw-description">
+        Discover practical tips to improve your sleep quality and unlock your full potential.
+      </p>
+      <p class="sleep-quote">"Quality sleep is the foundation of productivity and health."</p>
+    </div>
+
+    <!-- Why is Sleep Important Section -->
+    <div class="sleep-importance-section">
+      <h2 class="importance-title">Why is Sleep Important?</h2>
+      <p class="importance-text">
+        Sleep is essential for physical recovery, mental clarity, and emotional balance. Lack of
+        sleep can lead to decreased productivity, poor mood, and increased risk of chronic diseases.
+      </p>
+      <div class="sleep-video">
+        <iframe
+          src="https://www.youtube.com/embed/F9P9s0b3cK4"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Habits to Improve Sleep Section -->
+    <div class="sleep-habits-section">
+      <h2 class="habits-title">Habits to Improve Sleep</h2>
+      <ul class="habits-list">
+        <li><i class="fa fa-check-circle"></i> Avoid screens one hour before bed.</li>
+        <li><i class="fa fa-check-circle"></i> Try to establish a regular sleep schedule.</li>
+        <li><i class="fa fa-check-circle"></i> Relaxation exercises</li>
+      </ul>
+    </div>
+
+    <!-- Ideal Sleep Environment Section -->
+    <div class="sleep-environment-section">
+      <h2 class="environment-title">Create an Ideal Sleep Environment</h2>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <h3 class="comparison-label">Non-Ideal</h3>
+          <img src="{% static 'images/nonideal.png' %}" alt="Non-Ideal Bedroom" class="comparison-image" />
+        </div>
+        <div class="comparison-item">
+          <h3 class="comparison-label">Ideal</h3>
+          <img src="{% static 'images/ideal.png' %}" alt="Ideal Bedroom" class="comparison-image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sleep Calculator Section -->
+    <div class="sleep-calculator-section">
+      <h2 class="calculator-title">Sleep Calculator</h2>
+      <p class="calculator-text">Find your ideal bedtime based on when you plan to wake up:</p>
+      <form class="calculator-form">
+        <label for="wake-up-time" class="form-label">Wake-Up Time:</label>
+        <input type="time" id="wake-up-time" class="form-input" />
+        <button type="button" class="form-button" onclick="calculateBedtime()">Calculate</button>
+      </form>
+      <p class="calculator-result" id="calculator-result"></p>
+    </div>
+  </div>
+</section>
+<script src="{% static 'js/sleep.js' %}"></script>
+{% endblock %}

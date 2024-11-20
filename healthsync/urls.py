@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('authentications.urls')),  # `accounts/` のルート
     path('community/', include('community.urls')),  # `community/` のルート
     path('news/', include('news.urls')),  # `news/` のルート
+    path('blog/', include('blog.urls')),  # `blog/` のルート
 ]
 
 # Staticファイルのパターンを最後に定義
