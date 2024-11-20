@@ -2502,46 +2502,55 @@ WEEKLY TIPS
 /* ===========================
 UNIQUE QUOTE CAROUSEL
 =========================== */
+/* カルーセルのコンテナスタイル */
 .unique-carousel {
   background-color: #ffffff;
   padding: 50px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .unique-carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
   position: relative;
+  height: 200px; /* 固定の高さを設定 */
 }
 
+/* カードのベーススタイル */
 .unique-quote-card {
-  min-width: 100%;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%) scale(0.8);
+  transition: all 0.5s ease;
+  text-align: center;
   padding: 20px;
   background: linear-gradient(135deg, #f8e3d7, #f8e3d7);
-  color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+/* アクティブなカードのスタイル */
 .unique-quote-card.active {
   opacity: 1;
-  transform: scale(1);
+  transform: translateX(0) scale(1);
 }
 
-/* Media Query */
-@media (max-width: 768px) {
-  .unique-quote-card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+/* 前のカードのスタイル */
+.unique-quote-card.prev {
+  opacity: 0;
+  transform: translateX(-100%) scale(0.8);
 }
 
+/* 次のカードのスタイル */
+.unique-quote-card.next {
+  opacity: 0;
+  transform: translateX(100%) scale(0.8);
+}
+
+/* 引用文のスタイル */
 .unique-quote-card p {
   color: #000000;
   font-size: 18px;
@@ -2555,23 +2564,52 @@ UNIQUE QUOTE CAROUSEL
   color: #ed563b;
 }
 
+/* ナビゲーションボタンのスタイル */
 .unique-carousel-controls {
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+  padding: 0 20px;
+  z-index: 10;
 }
 
-.unique-carousel-controls button {
+.unique-prev-btn,
+.unique-next-btn {
   background: #ed563b;
   color: #ffffff;
   border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  font-size: 20px;
-  margin: 0 10px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-size: 20px;
+  margin: 0 10px;
 }
 
-.unique-carousel-controls button:hover {
+.unique-prev-btn:hover,
+.unique-next-btn:hover {
   background: #f86c49;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .unique-carousel {
+    padding: 30px 15px;
+  }
+
+  .unique-quote-card {
+    padding: 15px;
+  }
+
+  .unique-quote-card p {
+    font-size: 16px;
+  }
+
+  .unique-quote-card span {
+    font-size: 14px;
+  }
 }
