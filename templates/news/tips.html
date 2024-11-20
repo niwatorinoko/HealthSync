@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div class="container">
+      <div class="section-heading">
+        <h2>Weekly Health<em> Tips</em></h2>
+        <img src="{% static 'images/line-dec.png' %}" alt="decorative line" />
+        <p>Every week, we will share practical tips to help you feel your best and make healthier choices daily.</p>
+      </div>
+
+      <section class="section weekly-health-tips">
+      <div class="accordion" id="healthTipsAccordion">
+        <!-- Tip 1 -->
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Tip 1: Boost Your Metabolism
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#healthTipsAccordion">
+            <div class="card-body">
+              Incorporate high-intensity interval training (HIIT) into your routine to rev up your metabolism and burn more calories, even after your workout.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tip 2 -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Tip 2: Manage Stress Effectively
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#healthTipsAccordion">
+            <div class="card-body">
+              Practice stress-reducing techniques like meditation, deep breathing, or mindfulness to maintain a healthy mind and body. Chronic stress can have negative impacts on your overall well-being.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tip 3 -->
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Tip 3: Fuel Your Body with Superfoods
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#healthTipsAccordion">
+            <div class="card-body">
+              Incorporate nutrient-dense superfoods like berries, leafy greens, salmon, and chia seeds into your diet to nourish your body and support your overall health.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Tip 4: Prioritize Your Mental Health
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#healthTipsAccordion">
+            <div class="card-body">
+              Take time for self-care, whether it's practicing mindfulness, engaging in hobbies, or connecting with loved ones. Maintaining a healthy mental state is just as important as physical health.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}

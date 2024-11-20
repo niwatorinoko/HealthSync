@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentications.urls')),  # `accounts/` のルート
     path('community/', include('community.urls')),  # `community/` のルート
+    path('news/', include('news.urls')),  # `news/` のルート
 ]
 
 # Staticファイルのパターンを最後に定義

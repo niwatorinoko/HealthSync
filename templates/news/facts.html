@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+  <section class="section" id="health-facts">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Health Facts <em>You Should Know</em></h2>
+        <img src="{% static 'images/line-dec.png' %}" alt="decorative line" />
+        <p>Expand your knowledge with surprising and practical health insights!</p>
+      </div>
+      <div class="health-facts-links">
+        <div class="fact-link">
+          <a href="https://www.webmd.com" target="_blank" class="health-facts-button">Visit WebMD</a>
+          <p class="fact-description">
+            <a href="#" style="color: #ed563b; font-weight: bold;">WebMD</a> offers comprehensive health and medical information, including advice from certified experts and interactive tools.
+          </p>
+        </div>
+        <div class="fact-link">
+          <a href="https://www.mayoclinic.org" target="_blank" class="health-facts-button">Visit Mayo Clinic</a>
+          <p class="fact-description">
+            <a href="#" style="color: #ed563b; font-weight: bold;">Mayo Clinic</a> provides trusted medical resources, including expert-reviewed articles and cutting-edge research on health topics.
+          </p>
+        </div>
+        <div class="fact-link">
+          <a href="https://www.healthline.com" target="_blank" class="health-facts-button">Visit Healthline</a>
+          <p class="fact-description">
+            <a href="#" style="color: #ed563b; font-weight: bold;">Healthline</a> delivers evidence-based health and wellness information to empower users to make informed health decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

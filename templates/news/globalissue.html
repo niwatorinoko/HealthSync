@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="section" id="global-health-issue">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>Global Health<em> Issues</em></h2>
+          <img src="{% static 'images/line-dec.png' %}" alt="waves" />
+          <p>
+            Stay informed about critical global health challenges and how organizations are
+            addressing them.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- WHO Resource -->
+      <div class="col-lg-6 col-md-12">
+        <div class="issue-card">
+          <h3>
+            <span style="font-weight: bold; color: #ed563b">World Health Organization (WHO)</span>
+          </h3>
+          <p>
+            The <span style="font-weight: bold">WHO</span> monitors global health trends and
+            provides updates on major health issues, including pandemics, vaccine efforts, and
+            disease outbreaks. Learn more about their initiatives to improve public health
+            worldwide.
+          </p>
+          <a href="https://www.who.int" target="_blank" class="resource-button">Visit WHO</a>
+        </div>
+      </div>
+      <!-- IRC Resource -->
+      <div class="col-lg-6 col-md-12">
+        <div class="issue-card">
+          <h3>
+            <span style="font-weight: bold; color: #ed563b"
+              >International Rescue Committee (IRC)</span
+            >
+          </h3>
+          <p>
+            The <span style="font-weight: bold">IRC</span> addresses health crises in vulnerable
+            communities, providing life saving care, preventing disease, and responding to
+            emergencies. Discover how they are making an impact globally.
+          </p>
+          <a href="https://www.rescue.org" target="_blank" class="resource-button">Visit IRC</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Motivational <em> Quotes</em></h2>
+      <img src="{% static 'images/line-dec.png' %}" alt="decorative line" />
+      <p>
+        Stay inspired on your health journey with weekly motivational quotes that keep you moving
+        forward.
+      </p>
+    </div>
+
+    <div class="unique-carousel">
+      <div class="unique-carousel-inner">
+        <div class="unique-quote-card active">
+          <p>
+            "Strength doesn’t come from what you can do. It comes from overcoming the things you
+            once thought you couldn’t."
+          </p>
+          <span>- Rikki Rogers -</span>
+        </div>
+        <div class="unique-quote-card">
+          <p>"Don’t limit your challenges, challenge your limits."</p>
+          <span>- Anonymous -</span>
+        </div>
+        <div class="unique-quote-card">
+          <p>"It’s not about being the best. It’s about being better than you were yesterday."</p>
+          <span>- Anonymous -</span>
+        </div>
+        <div class="unique-quote-card">
+          <p>"What seems impossible today will one day become your warm-up."</p>
+          <span>- Anonymous -</span>
+        </div>
+        <div class="unique-quote-card">
+          <p>"Success usually comes to those who are too busy to be looking for it."</p>
+          <span>- Henry David Thoreau -</span>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="unique-carousel-controls">
+        <button class="unique-prev-btn" aria-label="Previous Quote">❮</button>
+        <button class="unique-next-btn" aria-label="Next Quote">❯</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="{% static 'js/quote.js' %}"></script>
+{% endblock %}
