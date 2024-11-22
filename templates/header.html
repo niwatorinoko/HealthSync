@@ -6,6 +6,7 @@
         <nav class="main-nav">
           <a href="{% url 'authentications:index' %}" class="logo">Health<em> Sync.</em></a>
           <ul class="nav">
+            {% if request.user.is_authenticated %}
             <li class="scroll-to-section">
               <a href="{% url 'authentications:sport_plan' %}">Sports Plan</a>
             </li>
@@ -15,8 +16,6 @@
             <li class="scroll-to-section">
               <a href="{% url 'community:list' %}">Community</a>
             </li>
-
-            {% if request.user.is_authenticated %}
             <li class="scroll-to-section">
               <a href="{% url 'authentications:profile' user.pk %}">Welcome, {{ request.user }}!</a>
             </li>
@@ -25,7 +24,19 @@
             </li>
             {% else %}
             <li class="scroll-to-section">
-              <a href="{% url 'authentications:login' %}">login</a>
+              <a href="#top">Home</a>
+            </li>
+            <li class="scroll-to-section">
+              <a href="#news">News</a>
+            </li>
+            <li class="scroll-to-section">
+              <a href="#blogs">Blogs</a>
+            </li>
+            <li class="scroll-to-section">
+              <a href="#contact-us">contact us</a>
+            </li>
+            <li class="login-button">
+              <a href="{% url 'authentications:login' %}">Login</a>
             </li>
             <li class="main-button">
               <a href="{% url 'authentications:signup' %}">Sign Up</a>

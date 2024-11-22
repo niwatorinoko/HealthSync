@@ -263,6 +263,22 @@ body {
   background-color: #f9735b;
 }
 
+.login-button a {
+  display: inline-block;
+  font-size: 15px;
+  padding: 0px 20px;
+  background-color: #ffffff6c;
+  color: #ed563b;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.login-button a:hover {
+  background-color: #f9735b;
+}
+
 /* 
 ---------------------------------------------
 header
