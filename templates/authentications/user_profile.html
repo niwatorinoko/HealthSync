@@ -105,7 +105,6 @@
 </style>
 
 <div class="profile-bmi-container">
-  <!-- プロフィール情報 -->
   <div class="profile-container">
     <h1 class="profile-title">{{ user.username }}'s Profile</h1>
     <div class="profile-info">
@@ -118,9 +117,7 @@
       {% if user.specify_condition %}
       <p><strong>Specific Condition:</strong> {{ user.specify_condition }}</p>
       {% endif %}
-      <p>
-        <strong>Dietary Preferences:</strong> {{ user.dietary_preferences }}
-      </p>
+      <p><strong>Dietary Preferences:</strong> {{ user.dietary_preferences }}</p>
       {% if user.food_allergies %}
       <p><strong>Food Allergies:</strong> {{ user.food_allergies }}</p>
       {% if user.specify_allergies %}
@@ -133,11 +130,9 @@
 
   {% include 'authentications/bmi.html' %}
 
-  <!-- 投稿一覧 -->
-
   <div class="box">
-    <h2 class="subtitle">Posts by {{ user.username }}</h2>
     {% if posts %} {% for post in posts %}
+    <h2 class="subtitle">Posts by {{ user.username }}</h2>
     <a href="{% url 'community:detail' post.pk %}">
       <div class="card post-card">
         <div class="card-content">
@@ -153,7 +148,7 @@
       </div>
     </a>
     {% endfor %} {% else %}
-    <p>{{ user.username }} has no posts yet.</p>
+    <h2 class="subtitle">{{ user.username }} has no posts yet.</h2>
     {% endif %}
   </div>
   {% endblock content %}

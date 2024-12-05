@@ -7,11 +7,7 @@
           <h2>Personalized <em>Sports Plan</em></h2>
           <img src="{% static 'images/line-dec.png' %}" alt="" />
           <p>
-            Achieve your goals with a customized plan for<a
-              style="color: #ed563b"
-            >
-              {{ sport }}</a
-            >
+            Achieve your goals with a customized plan for<a style="color: #ed563b"> {{ sport }}</a>
           </p>
         </div>
       </div>
@@ -21,26 +17,17 @@
         <ul>
           <li>
             <a href="#tabs-1"
-              ><img
-                src="{% static 'images/tabs-first-icon.png' %}"
-                alt=""
-              />Beginner</a
+              ><img src="{% static 'images/tabs-first-icon.png' %}" alt="" />Beginner</a
             >
           </li>
           <li>
             <a href="#tabs-2"
-              ><img
-                src="{% static 'images/tabs-first-icon.png' %}"
-                alt=""
-              />Intermediate</a
+              ><img src="{% static 'images/tabs-first-icon.png' %}" alt="" />Intermediate</a
             >
           </li>
           <li>
             <a href="#tabs-3"
-              ><img
-                src="{% static 'images/tabs-first-icon.png' %}"
-                alt=""
-              />Advanced</a
+              ><img src="{% static 'images/tabs-first-icon.png' %}" alt="" />Advanced</a
             >
           </li>
         </ul>
@@ -48,46 +35,40 @@
       <div class="col-lg-8">
         <section class="tabs-content">
           <article id="tabs-1">
-            <iframe
-              width="560"
-              height="315"
-              src="{{ beginner_url }}"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class="video-container">
+              <iframe
+                src="{{ beginner_url }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <h4>{{ beginner_title }}</h4>
             <p>{{ beginner_benefits }}</p>
-            <a href="{{ beginner_url }}" target="_blank">View Video</a>
           </article>
           <article id="tabs-2">
-            <iframe
-              width="560"
-              height="315"
-              src="{{ intermediate_url }}"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class="video-container">
+              <iframe
+                src="{{ intermediate_url }}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <h4>{{ intermediate_title }}</h4>
             <p>{{ intermediate_benefits }}</p>
-            <a href="{{ intermediate_url }}" target="_blank">View Video</a>
           </article>
           <article id="tabs-3">
-            <iframe
-              width="560"
-              height="315"
-              src="{{ advanced_url }}"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class="video-container">
+              <iframe
+                src="{{ advanced_url }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <h4>{{ advanced_title }}</h4>
             <p>{{ advanced_benefits }}</p>
-            <a href="{{ advanced_url }}" target="_blank">View Video</a>
           </article>
         </section>
       </div>
