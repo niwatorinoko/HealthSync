@@ -1,9 +1,15 @@
 {% extends 'base.html' %} {% block content %}
+<style>
+  .is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+</style>
 <div class="post-content-container">
   <div class="form-wrapper">
     <h1 class="form-title">Create a Post</h1>
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" onsubmit="disableButtons(event)">
       {% csrf_token %}
 
       <!-- Title Field -->
@@ -23,20 +29,14 @@
         <label for="id_image" class="form-label1">Upload Image</label>
         {{ form.image }}
         <div class="preview-container">
-          <img
-            id="image-preview"
-            class="image-preview"
-            alt="Preview will appear here"
-          />
+          <img id="image-preview" class="image-preview" alt="Preview will appear here" />
         </div>
       </div>
 
       <!-- Back and Submit Buttons -->
       <div class="form-actions mt-4">
-        <a class="button is-info mr-3" href="{{ request.META.HTTP_REFERER }}"
-          >Back</a
-        >
-        <button class="button is-primary" type="submit">Post</button>
+        <a class="button is-info mr-3" href="{{ request.META.HTTP_REFERER }}">Back</a>
+        <button id="submit-button" class="button is-primary" type="submit">Post</button>
       </div>
     </form>
   </div>
@@ -61,6 +61,16 @@
       preview.src = "";
       preview.style.display = "none";
     }
+  }
+
+  // ボタンを無効化する関数
+  function disableButtons(event) {
+    // 送信を遅らせないようにイベントをそのまま処理
+    const buttons = document.querySelectorAll("button, a");
+    buttons.forEach((button) => {
+      button.disabled = true; // ボタンを無効化
+      button.classList.add("is-disabled"); // 必要なら見た目も変える
+    });
   }
 </script>
 {% endblock content %}

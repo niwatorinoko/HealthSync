@@ -8,11 +8,41 @@ from .nutrition_guide import personalized_nutrition_guide
 
 from .forms import UserCreationForm, UserLoginForm
 
+from django.core.mail import send_mail
+from django.http import JsonResponse
 
 User = get_user_model()
 
+
+
 class IndexView(generic.TemplateView):
     template_name = 'index.html'
+
+    def post(self, request, *args, **kwargs):
+        # フォームデータを取得
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject', 'No Subject')
+        message = request.POST.get('message')
+
+        # メール本文を作成
+        full_message = f"From: {name} <{email}>\n\n{message}"
+        
+        try:
+            # メール送信
+            send_mail(
+                subject=subject,
+                message=full_message,
+                from_email='rean.ogswr@gmail.com',  # 自分のメールアドレス
+                recipient_list=['rean.ogswr@gmail.com'],  # 受信者のメールアドレス
+                fail_silently=False,
+            )
+            # メール送信成功時のレスポンス
+            return JsonResponse({'success': True, 'message': 'Email has been sent!'})
+        except Exception as e:
+            # エラー時のレスポンス
+            return JsonResponse({'success': False, 'message': str(e)})
+
 
 class UnauthenticatedOnly(UserPassesTestMixin):
     """

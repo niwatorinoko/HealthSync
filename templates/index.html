@@ -172,9 +172,9 @@
             <div class="down-content">
               <span>Mental and Physical Wellness</span>
               <p>
-                The mind and body are deeply intertwined, with mental and physical health influencing
-                one another. Understanding this connection can help improve overall wellness and
-                create a balanced, healthier life.
+                The mind and body are deeply intertwined, with mental and physical health
+                influencing one another. Understanding this connection can help improve overall
+                wellness and create a balanced, healthier life.
               </p>
               <a href="{% url 'blog:mental' %}" class="text-button">Discover more</a>
             </div>
@@ -188,9 +188,9 @@
             <div class="down-content">
               <span>Sleep and Recovery</span>
               <p>
-                Discover effective tips and habits to improve sleep quality, promoting better physical
-                and mental health. Prioritize restful sleep to enhance mood, energy levels, and
-                overall productivity through a day.
+                Discover effective tips and habits to improve sleep quality, promoting better
+                physical and mental health. Prioritize restful sleep to enhance mood, energy levels,
+                and overall productivity through a day.
               </p>
               <a href="{% url 'blog:sleeprecovery' %}" class="text-button">Discover more</a>
             </div>
@@ -236,6 +236,7 @@
         <div class="col-lg-6 col-md-6 col-xs-12">
           <div class="contact-form">
             <form id="contact" action="" method="post">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <fieldset>
@@ -246,9 +247,8 @@
                   <fieldset>
                     <input
                       name="email"
-                      type="text"
+                      type="email"
                       id="email"
-                      pattern="[^ @]*@[^ @]*"
                       placeholder="Your Email*"
                       required=""
                     />
@@ -282,6 +282,36 @@
       </div>
     </div>
   </section>
+
+  <!-- JavaScriptコードをHTMLの最後に追加 -->
+  <script>
+    document.getElementById("contact").addEventListener("submit", function (event) {
+      event.preventDefault(); // デフォルトの送信を防止
+
+      const formData = new FormData(this); // フォームデータを取得
+
+      fetch(".", {
+        method: "POST", // POSTリクエストを送信
+        body: formData,
+        headers: {
+          "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value, // CSRFトークンを追加
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("Your message has been sent!"); // Success message
+            this.reset(); // フォームをリセット
+          } else {
+            alert(`Error: ${data.message}`); // エラーメッセージ
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred while sending the message.");
+        });
+    });
+  </script>
   <!-- ***** Contact Us Area Ends ***** -->
 </body>
 {% endblock content %}
