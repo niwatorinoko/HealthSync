@@ -49,7 +49,7 @@ class PostForm(forms.ModelForm):
             }
         ),
         label='Upload Image',
-        required=False
+        required=True
     )
 
 class CommentForm(forms.ModelForm):
