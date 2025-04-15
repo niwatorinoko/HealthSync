@@ -1,5 +1,35 @@
 # HealthSync
 
+## [1. Home](http://54.226.86.235:8000)
+- Introduction to the purpose and mission of the website
+
+## [2. Health Survey (Sign Up)](http://54.226.86.235:8000/signup/)
+- Questions about your health condition, height, weight, and physical activity level
+
+## [3. User Profile](http://54.226.86.235:8000/profile/1)
+- Displays personal information and results from the health survey
+
+## [4. Sport Videos](http://54.226.86.235:8000/sport_plan/)
+- Shows three levels of videos (Beginner, Intermediate, Advanced) for the sport selected in the health survey
+
+## [5. Personalized Nutrition Guide](http://54.226.86.235:8000/nutrition_plan/)
+- Offers dietary plans that accommodate vegetarians, food allergies, and other dietary restrictions
+
+## [6. Community](http://54.226.86.235:8000/community/)
+- Users can ask questions, share tips about exercise and nutrition plans
+- Comment on posts and engage with others
+
+## [7. Contact](http://54.226.86.235:8000)
+- Fill out and send inquiries; your message will be sent to the developer via email
+
+## [8. Blog & News](http://54.226.86.235:8000/blog/mental/)
+- Articles on health and nutrition
+- Information about upcoming sports events
+
+---
+
+# HealthSync
+
 ## [1. ホーム](http://54.226.86.235:8000)
 - このWebサイトについての説明
 
